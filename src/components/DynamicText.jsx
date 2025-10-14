@@ -1,4 +1,4 @@
-import { Text } from "@react-three/drei";
+import { Sparkles, Text } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
@@ -12,10 +12,9 @@ const DynamicText = ({ fontSize }) => {
 
     // 文字轻微浮动
     if (textRef.current) {
-      textRef.current.position.y = Math.sin(t * 0.5) * 0.2;
-      textRef.current.rotation.y = Math.sin(t * 0.3) * 0.1;
+      textRef.current.position.y = Math.sin(t * 0.2) * 0.2;
+      textRef.current.rotation.y = Math.sin(t * 0.2) * 0.1;
     }
-
     // 主光源围绕文字旋转
     if (lightRef.current) {
       lightRef.current.position.x = Math.cos(t) * 8;
@@ -47,11 +46,19 @@ const DynamicText = ({ fontSize }) => {
       >
         Shallow Aria
         <meshStandardMaterial
-          color="#ff0000"
+          color="#5e3b3b"
           roughness={0.3}
           metalness={0.9}
           emissive="#330000"
           emissiveIntensity={0.2}
+        />
+        <Sparkles
+          count={50}
+          scale={8}
+          size={6}
+          speed={0.002}
+          noise={0.2}
+          color="yellow"
         />
       </Text>
 
@@ -74,7 +81,7 @@ const DynamicText = ({ fontSize }) => {
         ref={light2Ref}
         position={[-6, 3, 0]}
         intensity={100}
-        color="#d6221b"
+        color="#6bc4e7"
       />
 
       {/* 顶部定向光 */}
