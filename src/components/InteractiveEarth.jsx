@@ -1,5 +1,5 @@
 import { OrbitControls } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
@@ -8,8 +8,6 @@ const InteractiveEarth = () => {
   const groupRef = useRef();
   const labelsRef = useRef([]);
   const isDragging = useRef(false);
-  const previousMouse = useRef({ x: 0, y: 0 });
-  const [earthTexture, setEarthTexture] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -21,14 +19,10 @@ const InteractiveEarth = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // 加载地球纹理
-  useEffect(() => {
-    const loader = new THREE.TextureLoader();
-    loader.load(
-      "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg",
-      (texture) => setEarthTexture(texture)
-    );
-  }, []);
+  const earthTexture = useLoader(
+    THREE.TextureLoader,
+    "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+  );
 
   // 城市位置数据
   const locations = [
