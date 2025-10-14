@@ -37,12 +37,6 @@ const DynamicText = ({ fontSize }) => {
         fontSize={fontSize}
         color="#792828"
         position={[0, 0, 0]}
-        bevelEnabled
-        bevelThickness={0.1}
-        bevelSize={0.03}
-        bevelSegments={8}
-        castShadow
-        receiveShadow
       >
         Shallow Aria
         <meshStandardMaterial
@@ -71,9 +65,6 @@ const DynamicText = ({ fontSize }) => {
         position={[8, 5, 0]}
         intensity={150}
         color="#2cb8f0"
-        castShadow
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
       />
 
       {/* 次旋转光源 - 冷色调 */}
@@ -85,12 +76,7 @@ const DynamicText = ({ fontSize }) => {
       />
 
       {/* 顶部定向光 */}
-      <directionalLight
-        position={[0, 10, 5]}
-        intensity={1}
-        color="#ffffff"
-        castShadow
-      />
+      <directionalLight position={[0, 10, 5]} intensity={1} color="#ffffff" />
 
       {/* 底部补光 */}
       <pointLight position={[0, -5, 3]} intensity={30} color="#9b59b6" />

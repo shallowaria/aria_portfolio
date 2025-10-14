@@ -34,7 +34,7 @@ const Navbar = () => {
             <ul className="flex items-center justify-center gap-4 md:gap-6 relative z-20">
               <li className="text-zinc-700 hover:text-red-500 font-semibold py-2 max-sm:px-5">
                 <a
-                  href="/about"
+                  href="#about"
                   className="text-lg md:text-base hover:text-red-500 transition-colors"
                 >
                   About
@@ -42,7 +42,7 @@ const Navbar = () => {
               </li>
               <li className="text-zinc-700 hover:text-red-500 font-semibold py-2 max-sm:px-5">
                 <a
-                  href="/work"
+                  href="#work"
                   className="text-lg md:text-base hover:text-red-500 transition-colors"
                 >
                   Work
@@ -50,7 +50,7 @@ const Navbar = () => {
               </li>
               <li className="text-zinc-700 hover:text-red-500 font-semibold py-2 max-sm:px-5">
                 <a
-                  href="/study"
+                  href="#study"
                   className="text-lg md:text-base hover:text-red-500 transition-colors"
                 >
                   Study
@@ -70,7 +70,7 @@ const Navbar = () => {
           <ul className="flex flex-col items-center justify-center gap-4 md:gap-6 relative z-20 text-center">
             <li className="text-zinc-700 hover:text-red-500 font-semibold max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5">
               <a
-                href="/about"
+                href="#about"
                 className="text-lg md:text-base hover:text-red-500 transition-colors"
               >
                 About
@@ -78,7 +78,7 @@ const Navbar = () => {
             </li>
             <li className="text-zinc-700 hover:text-red-500 font-semibold max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5">
               <a
-                href="/work"
+                href="#work"
                 className="text-lg md:text-base hover:text-red-500 transition-colors"
               >
                 Work
@@ -86,7 +86,7 @@ const Navbar = () => {
             </li>
             <li className="text-zinc-700 hover:text-red-500 font-semibold max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5">
               <a
-                href="/study"
+                href="#study"
                 className="text-lg md:text-base hover:text-red-500 transition-colors"
               >
                 Study

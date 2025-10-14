@@ -9,8 +9,17 @@ const InteractiveEarth = () => {
   const labelsRef = useRef([]);
   const isDragging = useRef(false);
   const previousMouse = useRef({ x: 0, y: 0 });
-  const rotationVelocity = useRef({ x: 0, y: 0 });
   const [earthTexture, setEarthTexture] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // 加载地球纹理
   useEffect(() => {
@@ -52,53 +61,10 @@ const InteractiveEarth = () => {
     });
   });
 
-  // 鼠标事件处理
-  const handlePointerDown = (e) => {
-    isDragging.current = true;
-    previousMouse.current = { x: e.clientX, y: e.clientY };
-    rotationVelocity.current = { x: 0, y: 0 };
-  };
-
-  const handlePointerMove = (e) => {
-    if (!isDragging.current || !groupRef.current) return;
-
-    const deltaX = e.clientX - previousMouse.current.x;
-    const deltaY = e.clientY - previousMouse.current.y;
-
-    groupRef.current.rotation.y += deltaX * 0.005;
-    groupRef.current.rotation.x += deltaY * 0.005;
-
-    // 限制X轴旋转角度
-    groupRef.current.rotation.x = Math.max(
-      -Math.PI / 3,
-      Math.min(Math.PI / 3, groupRef.current.rotation.x)
-    );
-
-    previousMouse.current = { x: e.clientX, y: e.clientY };
-  };
-
-  const handlePointerUp = () => {
-    isDragging.current = false;
-  };
-
-  useEffect(() => {
-    window.addEventListener("pointermove", handlePointerMove);
-    window.addEventListener("pointerup", handlePointerUp);
-
-    return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerup", handlePointerUp);
-    };
-  }, []);
-
   if (!earthTexture) return null;
 
   return (
-    <group
-      ref={groupRef}
-      position={[0, 0, 0]}
-      onPointerDown={handlePointerDown}
-    >
+    <group ref={groupRef} position={[0, 0, 0]}>
       {/* 地球主体 */}
       <mesh ref={earthRef} castShadow receiveShadow>
         <sphereGeometry args={[2, 64, 64]} />
@@ -131,7 +97,15 @@ const InteractiveEarth = () => {
       {/* 地球光照 */}
       <ambientLight intensity={8} />
       <directionalLight position={[5, 3, 5]} intensity={0.8} />
-      <OrbitControls enableZoom={false} />
+      {!isMobile && (
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          rotateSpeed={0.6}
+          minDistance={7}
+          maxDistance={9.5}
+        />
+      )}
     </group>
   );
 };
