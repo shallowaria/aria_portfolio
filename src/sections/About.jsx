@@ -14,20 +14,26 @@ const About = () => {
             </h3>
             <ul className="space-y-4">
               <li className="text-lg text-zinc-50">
-                您好,我是凯布,迄今已有半年的前端学习经验,我非常着迷于前端的技能,主要攻克方向为React及其相关生态
+                您好,我是凯布,迄今已有<b>半年</b>
+                的前端学习经验,我非常着迷于前端的技能,希望有朝一日能从事前端工程师
               </li>
               <li className="text-lg text-zinc-50">
-                喜欢折腾:装过主机、修过NS手柄漂移、弄过Proxy订阅规则、折腾过StableDiffusion及SillyTavern
+                我主要的技术栈为 React / React Query / Redux Toolkit / React
+                Router / Next.js / Tailwind CSS,目前正在学习Three.js和Astro
               </li>
               <li className="text-lg text-zinc-50">
-                对Ai生图、对话和LLM有足够的了解, 学习途中看过 Git Pro JavaScript
-                DOM编程艺术 犀牛书 ES6教程,对基础知识有足够的了解
-                大学时期学过一些C和Python,现在正朝着前端方向努力
+                除此以外,我对Ai生图和LLM有足够的了解, 自学途中看过 Git
+                Pro、JavaScript
+                DOM编程艺术、犀牛书、ES6教程,对基础知识有足够的了解
               </li>
               <li className="text-lg text-zinc-50">
-                能正常阅读英文文档和看英文视频
+                并且喜欢折腾:装过主机、修过NS手柄漂移、弄过Proxy订阅规则、玩过
+                StableDiffusion 及 SillyTavern
               </li>
-              <li className="text-lg text-zinc-50 font-semibold italic">
+              <li className="text-lg text-zinc-50">
+                前端自学过程主要从Youtube、Udemy、Discord、官方Doc上寻找资料,能正常阅读英文文档和看英文视频
+              </li>
+              <li className="text-lg text-zinc-50 font-semibold italic mt-20">
                 Just take one step today!
               </li>
             </ul>
