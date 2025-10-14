@@ -15,7 +15,7 @@ const Navbar = () => {
             href="/"
             className="text-zinc-700 font-bold text-xl hover:text-red-500 transition-colors"
           >
-            Aria
+            凯 布
           </a>
 
           <button

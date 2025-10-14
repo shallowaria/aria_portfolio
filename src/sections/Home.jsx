@@ -27,14 +27,23 @@ const Home = () => {
         <div className="w-full h-full absolute inset-0">
           <Canvas className="w-full h-full">
             <Suspense fallback={<CanvasLoader />}>
-              <PerspectiveCamera makeDefault position={[0, 0, 10]} />
+              <PerspectiveCamera
+                makeDefault
+                position={[0, 0, 10]}
+                near={1}
+                far={100}
+              />
               <TextCamera>
                 <DynamicText fontSize={fontSize} />
               </TextCamera>
               <InteractiveEarth />
-              <fog attach="fog" args={["#1a1a1a", 10, 25]} />
             </Suspense>
           </Canvas>
+        </div>
+        <div className="absolute bottom-30 left-0 right-0 w-full z-10 sm:px-10 px-5">
+          <p className="w-fit mx-auto sm:text-3xl text-2xl font-medium text-zinc-500 text-center">
+            能时勉强自己拼尽全力反而容易坚持不下去。时刻以70%的力量奋斗才是专业人士噢。
+          </p>
         </div>
       </div>
     </section>

@@ -3,6 +3,35 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
+// 城市标签组件
+const CityLabel = ({ position, text }) => {
+  const spriteRef = useRef();
+
+  const texture = (() => {
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    canvas.width = 256;
+    canvas.height = 64;
+
+    context.fillStyle = "rgba(0, 0, 0, 0.7)";
+    context.roundRect(0, 0, canvas.width, canvas.height, 10);
+    context.fill();
+
+    context.font = "Bold 24px Arial";
+    context.fillStyle = "#a0e78a";
+    context.textAlign = "center";
+    context.fillText(text, 128, 40);
+
+    return new THREE.CanvasTexture(canvas);
+  })();
+
+  return (
+    <sprite ref={spriteRef} position={position} scale={[0.8, 0.2, 1]}>
+      <spriteMaterial map={texture} transparent />
+    </sprite>
+  );
+};
+
 const InteractiveEarth = () => {
   const earthRef = useRef();
   const groupRef = useRef();
@@ -12,7 +41,7 @@ const InteractiveEarth = () => {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 640);
     };
     checkMobile();
     window.addEventListener("resize", checkMobile);
@@ -26,7 +55,7 @@ const InteractiveEarth = () => {
 
   // 城市位置数据
   const locations = [
-    { lat: 29.33, lng: 103.45, name: "我在这儿！", color: "#ff6b6b" },
+    { lat: 29.33, lng: 103.45, name: "我在这儿！", color: "#33e9f0" },
   ];
 
   // 将经纬度转换为3D坐标
@@ -66,7 +95,7 @@ const InteractiveEarth = () => {
       </mesh>
 
       {/* 城市标记 */}
-      {locations.map((loc, idx) => {
+      {locations.map((loc, id) => {
         const pos = latLngTo3D(loc.lat, loc.lng, 2.05);
         const labelPos = latLngTo3D(loc.lat, loc.lng, 2.5);
 
@@ -82,7 +111,7 @@ const InteractiveEarth = () => {
             <CityLabel
               position={labelPos}
               text={loc.name}
-              ref={(el) => (labelsRef.current[idx] = el)}
+              ref={(e) => (labelsRef.current[id] = e)}
             />
           </group>
         );
@@ -101,35 +130,6 @@ const InteractiveEarth = () => {
         />
       )}
     </group>
-  );
-};
-
-// 城市标签组件
-const CityLabel = ({ position, text }) => {
-  const spriteRef = useRef();
-
-  const texture = (() => {
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-    canvas.width = 256;
-    canvas.height = 64;
-
-    context.fillStyle = "rgba(0, 0, 0, 0.7)";
-    context.roundRect(0, 0, canvas.width, canvas.height, 10);
-    context.fill();
-
-    context.font = "Bold 24px Arial";
-    context.fillStyle = "#a9dd56";
-    context.textAlign = "center";
-    context.fillText(text, 128, 40);
-
-    return new THREE.CanvasTexture(canvas);
-  })();
-
-  return (
-    <sprite ref={spriteRef} position={position} scale={[0.8, 0.2, 1]}>
-      <spriteMaterial map={texture} transparent />
-    </sprite>
   );
 };
 

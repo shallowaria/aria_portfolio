@@ -10,19 +10,16 @@ const DynamicText = ({ fontSize }) => {
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
 
-    // 文字轻微浮动
     if (textRef.current) {
       textRef.current.position.y = Math.sin(t * 0.2) * 0.2;
       textRef.current.rotation.y = Math.sin(t * 0.2) * 0.1;
     }
-    // 主光源围绕文字旋转
     if (lightRef.current) {
       lightRef.current.position.x = Math.cos(t) * 8;
       lightRef.current.position.z = Math.sin(t) * 8;
       lightRef.current.position.y = 5 + Math.sin(t * 0.5) * 2;
     }
 
-    // 次光源反向旋转
     if (light2Ref.current) {
       light2Ref.current.position.x = Math.cos(t + Math.PI) * 6;
       light2Ref.current.position.z = Math.sin(t + Math.PI) * 6;
@@ -47,19 +44,17 @@ const DynamicText = ({ fontSize }) => {
           emissiveIntensity={0.2}
         />
         <Sparkles
-          count={50}
+          count={100}
           scale={8}
           size={6}
           speed={0.002}
-          noise={0.2}
+          noise={0.5}
           color="yellow"
-        />
+        />{" "}
       </Text>
 
-      {/* 环境光 */}
       <ambientLight intensity={0.2} />
 
-      {/* 主旋转光源 - 暖色调 */}
       <pointLight
         ref={lightRef}
         position={[8, 5, 0]}
@@ -67,7 +62,6 @@ const DynamicText = ({ fontSize }) => {
         color="#2cb8f0"
       />
 
-      {/* 次旋转光源 - 冷色调 */}
       <pointLight
         ref={light2Ref}
         position={[-6, 3, 0]}
@@ -75,13 +69,10 @@ const DynamicText = ({ fontSize }) => {
         color="#6bc4e7"
       />
 
-      {/* 顶部定向光 */}
       <directionalLight position={[0, 10, 5]} intensity={1} color="#ffffff" />
 
-      {/* 底部补光 */}
       <pointLight position={[0, -5, 3]} intensity={30} color="#9b59b6" />
 
-      {/* 背景聚光灯效果 */}
       <spotLight
         position={[0, 0, -10]}
         angle={0.5}
