@@ -53,8 +53,9 @@ const InteractiveEarth = () => {
   });
 
   // 鼠标事件处理
-  const handlePointerDown = () => {
+  const handlePointerDown = (e) => {
     isDragging.current = true;
+    previousMouse.current = { x: e.clientX, y: e.clientY };
     rotationVelocity.current = { x: 0, y: 0 };
   };
 
