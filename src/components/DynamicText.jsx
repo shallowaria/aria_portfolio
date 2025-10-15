@@ -35,7 +35,7 @@ const DynamicText = ({ fontSize }) => {
         color="#792828"
         position={[0, 0, 0]}
       >
-        凯 布
+        凯布的求职页
         <meshStandardMaterial
           color="#5e3b3b"
           roughness={0.3}

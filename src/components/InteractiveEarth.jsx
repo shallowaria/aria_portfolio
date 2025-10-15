@@ -75,7 +75,7 @@ const InteractiveEarth = () => {
 
     // 自动旋转（当不拖拽时）
     if (!isDragging.current) {
-      groupRef.current.rotation.y += 0.002;
+      groupRef.current.rotation.y += 0.003;
     }
 
     // 让标签始终面向相机
@@ -127,6 +127,12 @@ const InteractiveEarth = () => {
           rotateSpeed={0.6}
           minDistance={7}
           maxDistance={9.5}
+          onStart={() => {
+            isDragging.current = true;
+          }}
+          onEnd={() => {
+            isDragging.current = false;
+          }}
         />
       )}
     </group>

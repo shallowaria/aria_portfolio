@@ -118,3 +118,36 @@ export const myProjects = [
     ],
   },
 ];
+
+export const studyExperiences = [
+  {
+    id: 1,
+    name: "Basic",
+    pos: "Noob Web Developer",
+    duration: "2025.03 - 2025.06",
+    title:
+      "从0开始学习基础,HTML-Markdown-CSS-Less-BootStrip-Git-JavaScript-ES6,看犀牛书,做了一些简单的项目如品客网页面,Youtube页面,表单验证等,接着大概了解互联网的基础运作原理.",
+    icon: "/assets/js.svg",
+    animation: "salute",
+  },
+  {
+    id: 2,
+    name: "React",
+    pos: "Junior Web Developer",
+    duration: "2025.07 - Present",
+    title:
+      "系统性地学习 React 基础和一些常用库,包含 React-Query、Redux Toolkit、React Query,同时了解了三种现代 CSS 写作方法: CSS Modules、Styled Components、Tailwind CSS,在这之中我最爱用 Tailwind 进行书写.",
+    icon: "/assets/react.svg",
+    animation: "clapping",
+  },
+  {
+    id: 3,
+    name: "Three.js",
+    pos: "Junior Web Developer",
+    duration: "2025.10 - Present",
+    title:
+      "从零开始的Three.js学习,主要靠看官方文档和Youtube的视频教程,Threejs、React Three Fiber和Drei,以及Gasp和Maath,目前仍在绝赞学习中.",
+    icon: "/assets/threejs.ico",
+    animation: "victory",
+  },
+];

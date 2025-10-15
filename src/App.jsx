@@ -1,6 +1,7 @@
 import About from "./sections/About";
 import Home from "./sections/Home";
 import Navbar from "./sections/Navbar";
+import Study from "./sections/Study";
 import Work from "./sections/Work";
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <Home />
       <About />
       <Work />
+      <Study />
     </main>
   );
 };
