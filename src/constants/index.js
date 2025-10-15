@@ -4,7 +4,7 @@ export const myProjects = [
     desc: "The Wild Oasis is a full-featured hotel management system designed for seamless operations across multiple locations. It provides an intuitive dashboard for managing bookings, cabins, and guests, with real-time updates and secure authentication.",
     subdesc:
       "Built with React, Supabase, React Query and Styled Components, The Wild Oasis demonstrates strong full-stack development skills with an emphasis on efficient state management and clean UI design.",
-    href: "https://shallowaria-the-wild-oasis.netlify.app",
+    href: "https://the-wild-oasiscy.pages.dev/",
     texture: "/textures/project1.png",
     logo: "/assets/project-logo1.png",
 
@@ -96,7 +96,7 @@ export const myProjects = [
     desc: "Fast React Pizza is a modern food ordering application that lets users browse pizzas, customize orders, and track their delivery in real-time. It focuses on speed, simplicity, and a delightful user experience.",
     subdesc:
       "Built with React, Redux Toolkit,Tailwind CSS and React Router, Fast React Pizza showcases mastery of state management and component-driven UI design, optimized for scalability and performance in real-world applications.",
-    href: "https://shallowaria-fast-react-pizza.netlify.app",
+    href: "https://fast-react-pizza-gamma-flax.vercel.app",
     texture: "/textures/project4.png",
     logo: "/assets/project-logo4.svg",
     tags: [
