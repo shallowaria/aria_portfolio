@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { myProjects } from "../constants/index.js";
+import { Canvas } from "@react-three/fiber";
+import WorkComputer from "../components/WorkComputer.jsx";
+import { Center, OrbitControls } from "@react-three/drei";
 
 const projectCount = myProjects.length;
 const Work = () => {
@@ -21,9 +24,9 @@ const Work = () => {
       <p className="sm:text-4xl text-3xl font-semibold text-zinc-400">
         My Work
       </p>
-      <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full ">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
-          <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg">
+      <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
+        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-xl shadow-cyan-200 h-full">
+          <div className="p-3 backdrop-blur-3xl w-fit rounded-lg">
             <img
               src={currentProject.logo}
               alt="logo"
@@ -78,6 +81,19 @@ const Work = () => {
               />
             </button>
           </div>
+        </div>
+
+        <div className="border border-black-300  rounded-lg h-96 md:h-full shadow-xl shadow-cyan-200">
+          <Canvas>
+            <ambientLight intensity={3} />
+            <directionalLight position={[10, 10, 10]} intensity={5} />
+            <Center>
+              <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                <WorkComputer texture={currentProject.texture} />
+              </group>
+            </Center>
+            <OrbitControls maxPolarAngle={[Math.PI]} enableZoom />
+          </Canvas>
         </div>
       </div>
     </section>

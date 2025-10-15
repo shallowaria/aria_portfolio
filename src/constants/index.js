@@ -5,7 +5,7 @@ export const myProjects = [
     subdesc:
       "Built with React, Supabase, React Query and Styled Components, The Wild Oasis demonstrates strong full-stack development skills with an emphasis on efficient state management and clean UI design.",
     href: "https://shallowaria-the-wild-oasis.netlify.app",
-    texture: "/textures/project/project1.png",
+    texture: "/textures/project1.png",
     logo: "/assets/project-logo1.png",
 
     tags: [
@@ -37,7 +37,7 @@ export const myProjects = [
     subdesc:
       "Designed by Next.js,TailwindCSS,Context API and Supabase with a little bit Ai Picture Generation.",
     href: "https://the-wild-oasis-website-phi-ten.vercel.app",
-    texture: "/textures/project/project2.png",
+    texture: "/textures/project2.png",
     logo: "/assets/project-logo2.webp",
 
     tags: [
@@ -69,7 +69,7 @@ export const myProjects = [
     subdesc:
       "Built with React, React Router, and Leaflet, WorldWise highlights strong front-end architecture and interactive mapping capabilities, featuring client-side routing, reusable components, and a clean, travel-inspired UI.",
     href: "https://shallowaria-world-wise.vercel.app",
-    texture: "/textures/project/project3.png",
+    texture: "/textures/project3.png",
     logo: "/assets/project-logo3.png",
 
     tags: [
@@ -97,7 +97,7 @@ export const myProjects = [
     subdesc:
       "Built with React, Redux Toolkit,Tailwind CSS and React Router, Fast React Pizza showcases mastery of state management and component-driven UI design, optimized for scalability and performance in real-world applications.",
     href: "https://shallowaria-fast-react-pizza.netlify.app",
-    texture: "/textures/project/project4.png",
+    texture: "/textures/project4.png",
     logo: "/assets/project-logo4.svg",
     tags: [
       {

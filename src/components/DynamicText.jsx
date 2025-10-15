@@ -50,7 +50,7 @@ const DynamicText = ({ fontSize }) => {
           speed={0.002}
           noise={0.5}
           color="yellow"
-        />{" "}
+        />
       </Text>
 
       <ambientLight intensity={0.2} />

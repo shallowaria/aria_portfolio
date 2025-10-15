@@ -23,8 +23,7 @@ const About = () => {
               </li>
               <li className="text-lg text-zinc-50">
                 除此以外,我对Ai生图和LLM有足够的了解, 自学途中看过 Git
-                Pro、JavaScript
-                DOM编程艺术、犀牛书、ES6教程,对基础知识有足够的了解
+                Pro、JavaScript DOM编程艺术、犀牛书、ES6教程,基础知识较为扎实
               </li>
               <li className="text-lg text-zinc-50">
                 并且喜欢折腾:装过主机、修过NS手柄漂移、弄过Proxy订阅规则、玩过
@@ -33,6 +32,7 @@ const About = () => {
               <li className="text-lg text-zinc-50">
                 前端自学过程主要从Youtube、Udemy、Discord、官方Doc上寻找资料,能正常阅读英文文档和看英文视频
               </li>
+              <li className="text-lg text-zinc-50">语言能力为 CET4 + N4</li>
               <li className="text-lg text-zinc-50 font-semibold italic mt-20">
                 Just take one step today!
               </li>
