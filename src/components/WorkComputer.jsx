@@ -8,7 +8,7 @@ const WorkComputer = (props) => {
   const { nodes, materials } = useGLTF("/models/computer.glb");
 
   const txt = useTexture(
-    props.texture ? props.texture : "/textures/project/project1",
+    props.texture ? props.texture : "/textures/project/project1.png",
     (texture) => {
       texture.flipY = false;
     }
