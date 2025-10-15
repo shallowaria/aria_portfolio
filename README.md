@@ -14,6 +14,8 @@
 - useAnimations 输入动画数组和使用动画的 ref 得到 actions
 - useEffect 内 action.play() 播放动画，同时设置 fadeIn 和 fadeOut 过渡流畅
 
+8. 页脚:添加联系方式，用 react-hot-toast 替代 alert
+
 ### 用到的网站：
 
 - [iconfont](https://www.iconfont.cn/)
